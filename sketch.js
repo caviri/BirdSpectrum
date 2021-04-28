@@ -164,11 +164,13 @@ function handleFile(file) {
     song.stop();
     song = loadSound(file);
     song.disconnect();
+    filter = new p5.LowPass();
     song.connect(filter);
     song.play();
+
   } else {
     song = loadSound(file);
-
+    filter = new p5.LowPass();
     song.disconnect();
     song.connect(filter);
     song.play();
